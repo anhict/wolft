@@ -21,7 +21,8 @@ ovs-vsctl list interface
 ovs-ofctl show  // hien thi thong tin ngan gon ve port
 ovs-dpctl show //show port
 ovs-dpctl dump-flows  
-  
+
+chmod +x *.sh
   
   
   
