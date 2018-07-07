@@ -28,7 +28,19 @@ neutron -netlist
 openstack show flavor
 nova boot --flavor m1.nano --image 0d628fbc-3169-4a12-9361-664119a06b7c  --nic net-id=5f54b578-01a2-4d9f-acf0-faaf926f832e  --availability-zone nova:compute1 vm03  
   
+ 
+openstack security group rule create --proto icmp default
+openstack security group rule create --proto tcp --dst-port 22 default
   
-  
-  
-  </pre>
+openstack flavor create --id 0 --vcpus 1 --ram 64 --disk 1 m1.nano
+
+. admin-openrc
+wget http://download.cirros-cloud.net/0.3.5/cirros-0.3.5-x86_64-disk.img
+apt update && apt dist-upgrade -y
+
+superuser ALL=(ALL) NOPASSWD:ALL
+%supergroup  ALL=(ALL) NOPASSWD:ALL
+
+
+
+</pre>
