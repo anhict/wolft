@@ -24,8 +24,9 @@ ovs-dpctl dump-flows
 
 chmod +x *.sh
   
-  
-  
+neutron -netlist
+openstack show flavor
+nova boot --flavor m1.nano --image 0d628fbc-3169-4a12-9361-664119a06b7c  --nic net-id=5f54b578-01a2-4d9f-acf0-faaf926f832e  --availability-zone nova:compute1 vm03  
   
   
   
