@@ -44,3 +44,24 @@ superuser ALL=(ALL) NOPASSWD:ALL
 
 
 </pre>
+<pre>Cần nắm dược 5 – 4 – 3 trong Cloud Computing: đó là 5 đặc tính, 4 mô hình dịch vụ và 3 mô hình triển khai.
+
+5 đặc điểm: (giải thích chi tiết sẽ có bài viết cụ thể hơn)
+
+Khả năng thu hồi và cấp phát tài nguyên (Rapid elasticity)
+Truy nhập qua các chuẩn mạng (Broad network access)
+Dịch vụ sử dụng đo đếm được (Measured service,) hay là chi trả theo mức độ sử dụng pay as you go.
+Khả năng tự phục vụ (On-demand self-service).
+Chia sẻ tài nguyên (Resource pooling).
+4 mô hình dịch vụ (mô hình sản phẩm): cũng sẽ giải thích chi tiết hơn trong bài viết cụ thể
+
+Public Cloud: Đám mây công cộng (là các dịch vụ trên nền tảng Cloud Computing để cho các cá nhân và tổ chức thuê, họ dùng chung tài nguyên).
+Private Cloud: Đám mây riêng (dùng trong một doanh nghiệp và không chia sẻ với người dùng ngoài doanh nghiệp đó)
+Community Cloud: Đám mây cộng đồng (là các dịch vụ trên nền tảng Cloud computing do các công ty cùng hợp tác xây dựng và cung cấp các dịch vụ cho cộng đồng. Tôi cũng chưa rõ FB có phải là một dạng này không, cần xác nhận lại.
+Hybrid Cloud : Là mô hình kết hợp (lai) giữa các mô hình Public Cloud và Private Cloud (không rõ có Community Cloud nữa không … :D)
+3 mô hình triển khai: tức là triển khai Cloud Computing để cung cấp:
+
+Hạ tầng như một dịch vụ (Infrastructure as a Service)
+Nền tảng như một dịch vụ (Platform as a Service)
+Phần mềm như một dịch vụ (Software as a Service)
+</pre>
