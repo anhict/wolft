@@ -64,7 +64,87 @@ Hybrid Cloud : Là mô hình kết hợp (lai) giữa các mô hình Public Clou
 Hạ tầng như một dịch vụ (Infrastructure as a Service)
 Nền tảng như một dịch vụ (Platform as a Service)
 Phần mềm như một dịch vụ (Software as a Service)
+## 10. Launch máy ảo
+
+**Provider network**
+
+- Tạo provider network
+
+``` sh
+. admin-openrc
+openstack network create  --share --external --provider-physical-network provider --provider-network-type flat provider
+```
+
+- Tạo subnet
+
+``` sh
+openstack subnet create --network provider \
+  --allocation-pool start=192.168.100.201,end=192.168.100.250 \
+  --dns-nameserver 8.8.8.8 --gateway 192.168.100.1 \
+  --subnet-range 192.168.100.0/24 provider
+```
+
+**Self-service network**
+
+- Tạo self-service network
+
+``` sh
+. demo-openrc
+openstack network create selfservice
+```
+
+- Tạo subnet
+
+``` sh
+openstack subnet create --network selfservice \
+  --dns-nameserver 8.8.8.8 --gateway 10.10.10.1 \
+  --subnet-range 10.10.10.0/24 selfservice
+```
+
+- Tạo router
+
+`openstack router create router`
+
+- Thêm self-service vào interface của router
+
+`neutron router-interface-add router selfservice`
+
+- Set gateway của router là provider network để ra ngoài internet
+
+`neutron router-gateway-set router provider`
+
+- Kiểm tra lại
+
+``` sh
+ip netns
+neutron router-port-list router
+```
+
+Tiến hành ping tới gateway của router để kiểm tra.
+
+- Tạo m1.nano flavor
+
+Flavor này chỉ dùng để test với CirrOS image
+
+`openstack flavor create --id 0 --vcpus 1 --ram 64 --disk 1 m1.nano`
+
+- Thêm security group rules cho phép ping và ssh
+
+``` sh
+openstack security group rule create --proto icmp default
+openstack security group rule create --proto tcp --dst-port 22 default
+```
+
+- Bạn có thể truy cập vào dashboard hoặc dùng câu lệnh để tạo máy ảo
+
+``` sh
+openstack server create --flavor m1.nano --image cirros \
+  --nic net-id=NET_ID --security-group default \
+   provider-instance
+```
+
+Thay `NET_ID` bằng id của provider hoặc self-service network.
 </pre>
 
 
-`test`
+
