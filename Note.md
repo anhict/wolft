@@ -1,3 +1,12 @@
+``` sh
+git config --global user.name "anhbka"
+git config --global user.email "anhnt@mail.com"
+cat ~/.gitconfig
+config --list
+```
+
+
+
 <pre>timedatectl set-timezone Asia/Ho_Chi_Minh
 . admin-openrc
 openstack network create  --share --external --provider-physical-network provider --provider-network-type flat provider
