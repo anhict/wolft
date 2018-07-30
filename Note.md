@@ -1,3 +1,14 @@
+```
+Create volume failed due to quota exceeded in spite of quota number updated
+cinder quota-show admin
+cinder quota-show tenan_id (neutron net-list)
+cinder quota-update --volumes 100 tenn_id
+
+
+```
+
+
+
 ``` sh
 git config --global user.name "anhbka"
 git config --global user.email "anhnt@mail.com"
